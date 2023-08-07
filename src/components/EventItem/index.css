@@ -1,0 +1,22 @@
+.item-bg {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  margin: 10px;
+  list-style: none;
+}
+.fdsjkla {
+  font-size: 8px;
+}
+.fdsjkl {
+  font-size: 12px;
+}
+.img {
+  height: 50px;
+  width: 100px;
+}
+button {
+  background-color: transparent;
+  border-style: none;
+  color: white;
+}
