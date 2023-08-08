@@ -54,33 +54,37 @@ const eventsList = [
 ]
 
 class Events extends Component {
-  state = {status: ''}
+  state = {status: '', isclicked: false}
 
-  onClickImg = id => {
-    const {status} = this.state
-    const s = eventsList.filter(each => {
-      if (each.id === id) {
-        this.setState({status: each.registrationStatus})
-      }
-      return s
-    })
+  onClickImg = registrationStatus => {
+    const {status, isclicked} = this.state
+    this.setState({status: registrationStatus, isclicked: true})
   }
 
   render() {
-    const {status} = this.state
+    const {status, isclicked} = this.state
     return (
       <div className="bg">
         <h1>Events</h1>
-        <div className="row">
+        <div className="row-bg">
           <ul className="row">
             {eventsList.map(each => (
-              <EventItem itemDetails={each} key={each.id} />
+              <EventItem
+                itemDetails={each}
+                onClickImg={this.onClickImg}
+                key={each.id}
+              />
             ))}
-            <ActiveEventRegistrationDetails
-              status={status}
-              onClickImg={this.onClickImg}
-            />
           </ul>
+          {isclicked ? (
+            <ActiveEventRegistrationDetails status={status} />
+          ) : (
+            <div className="dkjfsl">
+              <p className="ldksjfa">
+                Click on an event, to view its registration details
+              </p>
+            </div>
+          )}
         </div>
       </div>
     )
