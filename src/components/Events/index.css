@@ -1,16 +1,18 @@
 .bg {
-  background-color: #64748b;
+  background-color: white;
   background-size: cover;
   height: 100vh;
-  width: 60vw;
-  padding: 20px;
   font-family: 'roboto';
   color: white;
-  flex-shrink: 1;
 }
 .row {
   display: flex;
   flex-direction: column;
+  background-color: #64748b;
+  flex-grow: 1;
+
+  background-size: cover;
+  width: 60%;
 }
 
 .row-bg {
@@ -22,4 +24,5 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 30%;
 }

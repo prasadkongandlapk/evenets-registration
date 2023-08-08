@@ -65,9 +65,10 @@ class Events extends Component {
     const {status, isclicked} = this.state
     return (
       <div className="bg">
-        <h1>Events</h1>
         <div className="row-bg">
           <ul className="row">
+            <h1>Events</h1>
+
             {eventsList.map(each => (
               <EventItem
                 itemDetails={each}
@@ -76,15 +77,15 @@ class Events extends Component {
               />
             ))}
           </ul>
-          {isclicked ? (
-            <ActiveEventRegistrationDetails status={status} />
-          ) : (
-            <div className="dkjfsl">
+          <div className="dkjfsl">
+            {isclicked ? (
+              <ActiveEventRegistrationDetails status={status} />
+            ) : (
               <p className="ldksjfa">
                 Click on an event, to view its registration details
               </p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     )
